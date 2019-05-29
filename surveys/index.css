@@ -2328,6 +2328,17 @@ tbody>tr {
     border-bottom: 0px
 }
 
+
+tr>td.row-container {
+    width: 47%;
+    padding: 0px 70px 0px 0px;
+}
+
+td.group-container>label>span.matrix-col-label {
+    display: none;
+}
+
+
 label>i.fa-frown,
 i.fa-meh,
 i.fa-grin,
@@ -2414,8 +2425,6 @@ header>.header_logo {
     width: 100px;
 }
 
-
-
 .flow_text {
     animation: flow 5s ease-in-out infinite;
     background: linear-gradient(-60deg, var(--dark-blue), var(--deep-blue), var(--happy-blue), var(--main-blue));
@@ -2436,5 +2445,52 @@ header>.header_logo {
 
     100% {
         background-position: 0 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+
+
+    /* Matrix */
+    .matrix-container {
+        width: 80% !important;
+    }
+
+    div.matrix-container>h5.header {
+        margin-bottom: 0px !important;
+        font-size: 19px
+    }
+
+    thead.header-container {
+        display: none;
+    }
+
+    tr.question-body {
+        display: grid;
+        margin-top: 20px;
+    }
+
+    tr>td.row-container {
+        width: 100%;
+        padding: 15px 3px;
+        background: white;
+        font-size: 18px;
+
+    }
+
+    td.group-container {
+        display: -webkit-inline-box;
+        padding: 15px 0px;
+        border: 3px solid white;
+    }
+
+    td.group-container>label>span.matrix-col-label {
+        display: inherit;
+        font-size: 15px;
+    }
+
+    [type="radio"]:not(:checked)+span {
+        top: 7px;
     }
 }
