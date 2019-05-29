@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <div class="nav-wrapper nav-wrapper grey lighten-5 p-4">
+    <img src="../assets/images/synotool.png" alt="" width="85" height="52" />
+  </div>
+
+  <div class="progress">
+    <div class="determinate" style="width: 20%"></div>
+  </div>
+
+  <div class="container">
+    <h3 class="my-5">
+      Give us your opinion
+    </h3>
+    <div class="row px-5">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+            <label for="textarea2">What do you think about this text field</label>
+            <a class="waves-effect waves-light btn-small blue accent-1">Previous</a>
+            <a class="waves-effect waves-light btn-small blue accent-3">Next</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("input#input_text, textarea#textarea2").characterCounter();
+    });
+  </script>
+</body>
+
+</html>
