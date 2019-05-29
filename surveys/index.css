@@ -2419,8 +2419,6 @@ i.fa-meh-rolling-eyes {
 
 /* Annoucement */
 
-
-
 header>.header_logo {
     width: 100px;
 }
@@ -2448,14 +2446,37 @@ header>.header_logo {
     }
 }
 
+
 @media only screen and (max-width: 600px) {
 
+    .container {
+        width: 80% !important;
+    }
+
+    h2 {
+        font-size: 46px !important;
+    }
+
+    .w-90 {
+        width: 90% !important;
+    }
+
+    /* Announcement */
+
+    .data_container>div.pr-5,
+    div.pr-4 {
+        padding-right: 0px !important;
+    }
+
+    /* Multiple question */
+
+
+    .inline {
+        display: inline-flex !important;
+    }
 
 
     /* Matrix */
-    .matrix-container {
-        width: 80% !important;
-    }
 
     div.matrix-container>h5.header {
         margin-bottom: 0px !important;
@@ -2476,7 +2497,7 @@ header>.header_logo {
         padding: 15px 3px;
         background: white;
         font-size: 18px;
-
+        font-weight: bold;
     }
 
     td.group-container {
@@ -2492,5 +2513,11 @@ header>.header_logo {
 
     [type="radio"]:not(:checked)+span {
         top: 7px;
+    }
+
+    /* Final */
+    .final_container>div.pt-5.px-5 {
+        padding: 0px !important;
+        margin: 0px !important;
     }
 }
