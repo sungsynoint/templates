@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Survey</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="../styles/index.css" />
+  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <header class="nav-wrapper container mt-4 center">
+    <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+  </header>
+  <div class="container question_container">
+    <section class="container">
+      <h5 class="header my-5">
+        Thinking about your last visit to ... How satisfied are you with:
+      </h5>
+      <table class="container my-4">
+        <tbody>
+          <tr>
+            <td class="text-center">
+              <label class="tooltipped" data-position="bottom" data-tooltip="Sad face">
+                <input name="group1" type="radio" />
+                <i class="far fa-frown"></i>
+              </label>
+            </td>
+
+            <td class="text-center">
+              <label class="tooltipped" data-position="bottom" data-tooltip="Meh face">
+                <input name="group1" type="radio" />
+                <i class="far fa-meh"></i>
+              </label>
+            </td>
+
+            <td class="text-center">
+              <label class="tooltipped" data-position="bottom" data-tooltip="Happy as a hippo">
+                <input name="group1" type="radio" />
+                <i class="far fa-grin"></i>
+              </label>
+            </td>
+
+            <td class="text-center">
+              <label class="tooltipped" data-position="bottom" data-tooltip="Happy as a hippo x2">
+                <input name="group1" type="radio" />
+                <i class="far fa-grin-beam"></i>
+              </label>
+            </td>
+
+            <td class="text-center">
+              <label class="tooltipped" data-position="bottom" data-tooltip="Meh i dont understand">
+                <input name="group1" type="radio" />
+                <i class="far fa-meh-rolling-eyes"></i>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="col s12 center">
+        <div class="mt-5 buttons_container">
+          <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">Previous</a>
+          <a class="btn-small disabled" id="next-question" href="./thank-you.html">
+            Next
+          </a>
+        </div>
+        <p class="powered">Powered by</p>
+        <img class="synotool_logo" src="../styles/assets/images/synotool.png" alt="synoint">
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="progress ">
+      <div class="determinate" style="width: 50%"></div>
+    </div>
+  </footer>
+  <script>
+    const nodeList = document.querySelectorAll('[name="group1"]')
+    const buttonNext = document.querySelector("#next-question");
+    nodeList.forEach((list) => {
+      list.addEventListener("change", (e) => {
+        const result = e.target.checked;
+        result ? buttonNext.removeAttribute("class", "disabled") + buttonNext.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3") :
+          buttonNext.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3 disabled")
+      })
+    })
+
+    $(document).ready(function () {
+      $(".tooltipped").tooltip();
+    });
+  </script>
+</body>
+
+</html>

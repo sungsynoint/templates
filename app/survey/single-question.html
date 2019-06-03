@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Survey</title>
+  <link rel="stylesheet" href="../styles/index.css" />
+  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <header class="nav-wrapper container mt-4 center">
+    <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+  </header>
+  <div>
+    <div class="container question_container">
+      <section class="container">
+        <h5 class="header my-5">
+          Which state do you currently live in?
+        </h5>
+        <form class="my-4" id="single-question">
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>East Of England</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>Midlands</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>North West</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>Northern Ireland</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>South East</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" />
+              <span>South West</span>
+            </label>
+          </p>
+        </form>
+        <div class="col s12 center pt-5">
+          <div class="mt-5 buttons_container">
+            <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">
+              Previous
+            </a>
+            <a class="waves-effect waves-light btn-small disabled" id="next-question" href="./free-question.html">
+              Next
+            </a>
+          </div>
+
+          <p class="powered">Powered by</p>
+          <img class="synotool_logo" src="../styles/assets/images/synotool.png" alt="synoint">
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="progress ">
+        <div class="determinate" style="width: 30%"></div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.querySelector("#single-question").addEventListener("change", (e) => {
+      const checked = e.target.checked;
+      const button = document.querySelector("#next-question");
+      if (checked) {
+        button.removeAttribute("class", "disabled")
+        button.setAttribute("class", "waves-effect waves-light btn-small blue accent-3")
+      }
+    })
+    const buttonPrevious = document.querySelector("#previous-question");
+    buttonPrevious.addEventListener("click", function () {
+      window.history.back()
+    });
+  </script>
+
+</body>
+
+</html>

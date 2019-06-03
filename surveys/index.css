@@ -2274,6 +2274,12 @@
 }
 
 
+
+header>.header_logo {
+    width: 100px;
+}
+
+
 /* Progress bar */
 
 .progress {
@@ -2417,19 +2423,13 @@ i.fa-meh-rolling-eyes {
     border-bottom: 2px solid var(--happy-blue) !important;
 }
 
-/* Annoucement */
-
-header>.header_logo {
-    width: 100px;
-}
 
 .flow_text {
     animation: flow 5s ease-in-out infinite;
     background: linear-gradient(-60deg, var(--dark-blue), var(--deep-blue), var(--happy-blue), var(--main-blue));
     background-size: 300%;
-
-    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes flow {
@@ -2449,32 +2449,32 @@ header>.header_logo {
 
 @media only screen and (max-width: 600px) {
 
-    .container {
-        width: 80% !important;
-    }
-
-    h2 {
-        font-size: 46px !important;
-    }
-
-    .w-90 {
-        width: 90% !important;
-    }
 
     /* Announcement */
 
-    .data_container>div.pr-5,
-    div.pr-4 {
+    .announcement_container>div.container>div.data_container>div.col_responsive {
+        width: 100%;
         padding-right: 0px !important;
+        padding-left: 0px;
+    }
+
+    .announcement_container>div.container {
+        width: 80%;
+    }
+
+    .announcement_container>div.container>h2 {
+        font-size: 44px;
+    }
+
+
+    div.btn_container {
+        text-align: center;
     }
 
     /* Multiple question */
-
-
     .inline {
         display: inline-flex !important;
     }
-
 
     /* Matrix */
 
