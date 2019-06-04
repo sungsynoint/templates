@@ -37,15 +37,17 @@
             Next
           </a>
         </div>
-        <p class="powered">Powered by</p>
-        <img class="synotool_logo" src="../styles/assets/images/synotool.png" alt="synoint">
       </div>
     </section>
   </div>
 
   <footer>
+    <div class="logo_container">
+      <p>Powered by</p>
+      <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
+    </div>
     <div class="progress ">
-      <div class="determinate" style="width: 40%"></div>
+      <div class="determinate" style="width: 10%"></div>
     </div>
   </footer>
 
@@ -53,8 +55,8 @@
 
   <script>
     const textArea = document.querySelector("#textarea2");
+    const buttonNext = document.querySelector("#next-question");
     textArea.addEventListener("input", function (e) {
-      const buttonNext = document.querySelector("#next-question");
       e.target.value.length > 1 ? buttonNext.removeAttribute("class",
           "disabled") + buttonNext.setAttribute("class",
           "waves-effect waves-light btn-small blue accent-3") :

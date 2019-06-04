@@ -26,7 +26,7 @@
             </h5>
             <div class="mt-4">
                 <div class="row">
-                    <form class="mb-4" id="multiple-question">
+                    <form class="mb-4 multiple-question">
                         <div class="col s6">
                             <p>
                                 <label>
@@ -115,8 +115,7 @@
                                     Next
                                 </a>
                             </div>
-                            <p class="powered">Powered by</p>
-                            <img class="synotool_logo" src="../styles/assets/images/synotool.png" alt="synoint">
+
                         </div>
                     </form>
                 </div>
@@ -124,25 +123,27 @@
         </section>
     </div>
     <footer>
-        <div class="progress ">
-            <div class="determinate" style="width: 10%"></div>
+        <div class="logo_container">
+            <p>Powered by</p>
+            <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
+        </div>
+        <div class="progress">
+            <div class="determinate" id="determinate"></div>
         </div>
     </footer>
 
-
-
     <script>
-        document.querySelector("#multiple-question").addEventListener("change", function () {
-            const form = document.querySelector("#multiple-question");
-            for (let x = 0; x < form.length; x++) {
-                const elements = form[x];
-                if (elements.checked) {
-                    elements.setAttribute("name", "checked")
-                    const button = document.querySelector("#next-question");
-                    button.removeAttribute("class", "disabled")
-                    button.setAttribute("class", "waves-effect waves-light btn blue accent-3")
-                }
-            }
+        const button = document.querySelector("#next-question");
+        const progress = document.querySelector("#determinate");
+        const form = document.querySelectorAll(".multiple-question");
+        form.forEach((f) => {
+            f.addEventListener("change", (e) => {
+                !e.target.checked ? button.setAttribute("class", "disabled btn") +
+                    progress.setAttribute("style", "width: 0%") :
+                    progress.setAttribute("style", "width: 10%") +
+                    button.removeAttribute("class", "disabled") +
+                    button.setAttribute("class", "waves-effect waves-light btn blue accent-3");
+            })
         })
     </script>
 </body>
