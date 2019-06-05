@@ -54,23 +54,32 @@
   </div>
 
   <script>
+    "use strict";
     const textArea = document.querySelector("#textarea2");
-    const buttonNext = document.querySelector("#next-question");
-    textArea.addEventListener("input", function (e) {
-      e.target.value.length > 1 ? buttonNext.removeAttribute("class",
-          "disabled") + buttonNext.setAttribute("class",
-          "waves-effect waves-light btn-small blue accent-3") :
-        buttonNext.setAttribute("class",
-          "waves-effect waves-light btn-small blue accent-3 disabled")
-    })
-    const buttonPrevious = document.querySelector("#previous-question");
-    buttonPrevious.addEventListener("click", function () {
-      window.history.back()
-    });
+    const next = document.querySelector("#next-question");
+    const previous = document.querySelector("#previous-question");
 
-    $(document).ready(function () {
-      $("input#input_text, textarea#textarea2").characterCounter();
-    });
+    const validateTextArea = () => {
+      textArea.addEventListener("input", function (e) {
+        const {
+          length
+        } = e.target.value;
+
+        length > 1 ? next.removeAttribute("class",
+            "disabled") + next.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3") :
+          next.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3 disabled")
+      })
+      previous.addEventListener("click", function () {
+        window.history.back()
+      });
+
+      $(document).ready(function () {
+        $("input#input_text, textarea#textarea2").characterCounter();
+      });
+    }
+    validateTextArea();
   </script>
 </body>
 

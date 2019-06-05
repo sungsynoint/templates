@@ -83,18 +83,23 @@
     </footer>
   </div>
   <script>
-    document.querySelector("#single-question").addEventListener("change", (e) => {
-      const checked = e.target.checked;
-      const button = document.querySelector("#next-question");
-      if (checked) {
-        button.removeAttribute("class", "disabled")
-        button.setAttribute("class", "waves-effect waves-light btn-small blue accent-3")
-      }
-    })
-    const buttonPrevious = document.querySelector("#previous-question");
-    buttonPrevious.addEventListener("click", function () {
-      window.history.back()
-    });
+    const radio = document.querySelector("#single-question")
+    const previous = document.querySelector("#previous-question");
+    const next = document.querySelector("#next-question");
+
+    const validateRadio = () => {
+      radio.addEventListener("change", (e) => {
+        const checked = e.target.checked;
+        if (checked) {
+          next.removeAttribute("class", "disabled")
+          next.setAttribute("class", "waves-effect waves-light btn-small blue accent-3")
+        }
+      })
+      previous.addEventListener("click", function () {
+        window.history.back()
+      });
+    }
+    validateRadio();
   </script>
 
 </body>

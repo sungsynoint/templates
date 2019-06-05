@@ -66,28 +66,40 @@
         <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
       </div>
       <div class="progress ">
-        <div class="determinate" style="width: 10%"></div>
+        <div class="determinate" id="progress"></div>
       </div>
     </footer>
   </div>
   <script>
-    document.querySelector("#select_question").addEventListener("change", (e) => {
-      const optionValue = e.target.value === "option";
-      const button = document.querySelector("#next-question");
-      !optionValue ? button.removeAttribute("class", "disabled") + button.setAttribute("class",
-          "waves-effect waves-light btn-small blue accent-3") :
-        button.setAttribute("class",
-          "waves-effect waves-light btn-small blue accent-3 disabled")
-    })
+    "use strict";
+    const element = document.querySelector("#select_question");
+    const previous = document.querySelector("#previous-question");
+    const next = document.querySelector("#next-question");
 
-    const buttonPrevious = document.querySelector("#previous-question");
-    buttonPrevious.addEventListener("click", function () {
-      window.history.back()
-    });
+    const validateDropdown = () => {
+      element.addEventListener("change", (e) => {
+        const {
+          value
+        } = e.target;
 
-    $(document).ready(function () {
-      $("select").formSelect();
-    });
+        const optionValue = value === "option";
+        !optionValue ? next.removeAttribute("class", "disabled") + next.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3") :
+          next.setAttribute("class",
+            "waves-effect waves-light btn-small blue accent-3 disabled")
+      })
+
+      previous.addEventListener("click", function () {
+        window.history.back()
+      });
+
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+
+    }
+
+    validateDropdown()
   </script>
 </body>
 

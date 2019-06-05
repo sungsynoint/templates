@@ -386,7 +386,9 @@ footer>div.progress>.determinate {
     td.group-container>label>span.matrix-col-label {
         display: inherit;
         font-size: 15px;
+        color: whi
     }
+
 
     [type="radio"]:not(:checked)+span {
         top: 7px;

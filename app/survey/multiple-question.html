@@ -26,17 +26,17 @@
             </h5>
             <div class="mt-4">
                 <div class="row">
-                    <form class="mb-4 multiple-question">
+                    <form class="mb-4 multiple-question" id="multiple-question">
                         <div class="col s6">
                             <p>
                                 <label>
-                                    <input type="checkbox" class="checkbox" />
+                                    <input type="checkbox" class="checkbox" name="answer_one" />
                                     <span>Bebo</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" class="checkbox" />
+                                    <input type="checkbox" class="checkbox" name="answer_two" />
                                     <span>Face</span>
                                 </label>
                             </p>
@@ -128,23 +128,31 @@
             <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
         </div>
         <div class="progress">
-            <div class="determinate" id="determinate"></div>
+            <div class="determinate" id="progress"></div>
         </div>
     </footer>
 
     <script>
-        const button = document.querySelector("#next-question");
-        const progress = document.querySelector("#determinate");
-        const form = document.querySelectorAll(".multiple-question");
-        form.forEach((f) => {
-            f.addEventListener("change", (e) => {
-                !e.target.checked ? button.setAttribute("class", "disabled btn") +
-                    progress.setAttribute("style", "width: 0%") :
-                    progress.setAttribute("style", "width: 10%") +
-                    button.removeAttribute("class", "disabled") +
-                    button.setAttribute("class", "waves-effect waves-light btn blue accent-3");
-            })
-        })
+        "use strict";
+        const elements = [];
+        const checkboxes = document.querySelectorAll('[type=checkbox]');
+        const next = document.querySelector("#next-question");
+        const progress = document.querySelector("#progress");
+        const values = checkboxes.values();
+
+        const validateCheckbox = () => {
+            for (const value of values) {
+                value.addEventListener("change", (e) => {
+                    value.checked ? elements.push(value) : elements.pop(value)
+                    elements.length >= 1 ? next.removeAttribute("class", "disabled") +
+                        next.setAttribute("class", "waves-effect waves-light btn blue accent-3") +
+                        progress.setAttribute("style", "width: 10%") :
+                        progress.setAttribute("style", "width: 0%") +
+                        next.setAttribute("class", "disabled btn");
+                });
+            }
+        }
+        validateCheckbox();
     </script>
 </body>
 

@@ -354,30 +354,27 @@
 
 
   <script>
-    const getValue = (name) => {
-      const container = document.querySelectorAll(name);
-      const buttonNext = document.querySelector("#next-question");
-      let result = false;
-      container.forEach((c) => {
-        c.addEventListener("change", (e) => {
-          result = e.target.checked;
-          result ? buttonNext.removeAttribute("class", "disabled") + buttonNext.setAttribute("class",
-              "waves-effect waves-light btn-small blue accent-3") :
-            buttonNext.setAttribute("class",
-              "waves-effect waves-light btn-small blue accent-3 disabled")
-        });
-      });
-      const buttonPrevious = document.querySelector("#previous-question");
-      buttonPrevious.addEventListener("click", function () {
-        window.history.back()
-      });
+    "use strict";
+    const elements = [];
+    const radios = document.querySelectorAll('[type=radio]');
+    const next = document.querySelector("#next-question");
+    const progress = document.querySelector("#progress");
+    const values = radios.values();
 
+    const validateMatrix = () => {
+      for (const value of values) {
+        value.addEventListener("change", (e) => {
+          value.checked ? elements.push(value) : elements.pop(value)
+          elements.length >= 6 ? next.removeAttribute("class", "disabled") +
+            next.setAttribute("class", "waves-effect waves-light btn blue accent-3") :
+            +
+            next.setAttribute("class", "disabled btn");
+
+        });
+      }
     }
-    getValue('[name="group1"]')
-    getValue('[name="group2"]')
-    getValue('[name="group3"]')
-    getValue('[name="group4"]')
-    getValue('[name="group5"]')
+
+    validateMatrix();
   </script>
 </body>
 
