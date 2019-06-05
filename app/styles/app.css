@@ -309,6 +309,12 @@ footer>div.progress>.determinate {
     background-color: var(--happy-blue) !important;
 }
 
+section.container>video {
+    width: 100%;
+}
+
+
+
 
 @keyframes flow {
     0% {

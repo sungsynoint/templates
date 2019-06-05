@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Survey</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <header class="nav-wrapper container mt-4 center">
+        <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+    </header>
+
+    <div class="container question_container">
+        <section class="container">
+            <h5 class="header my-5">
+                Innan du svarar på frågorna i den här enkäten ska du titta på och/eller lyssna på marknadsföring i form
+                av en reklam-, kommunikations- eller designlösning.
+            </h5>
+            <video controls id="video">
+                <source src="../styles/assets/media/Britney Spears - Work Bch (Official Music Video).mp4"
+                    type="video/mp4">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+            <div class="col s12 center">
+                <div class="mt-5 buttons_container">
+                    <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">Previous</a>
+                    <a class="btn-small disabled" id="next-question" href="./thank-you.html">
+                        Next
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="logo_container">
+            <p>Powered by</p>
+            <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
+        </div>
+        <div class="progress">
+            <div class="determinate" id="progress"></div>
+        </div>
+    </footer>
+
+    <script>
+        "use strict";
+        const next = document.querySelector("#next-question");
+        const video = document.querySelector("#video");
+        video.addEventListener('click', function (e) {
+            setTimeout(() => {
+                next.removeAttribute("class", "disabled")
+                next.setAttribute("class",
+                    "waves-effect waves-light btn-small blue accent-3")
+            }, 5000)
+        })
+    </script>
+</body>
+
+</html>
