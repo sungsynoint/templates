@@ -1,426 +1,135 @@
-:root {
-    --main-blue: #3498DB;
-    --secondary-blue: #5fafec;
-    --happy-blue: #169aff;
-    --deep-blue: #292E7C;
-    --dark-blue: #00263b;
-    --dark-gray: #232323;
-    --light-gray: #f3f3f6;
-    --green-accent-3: #00e676;
-    --light-green-accent-3: #76ff03;
-    --yellow-accent-3: #ffea00;
-    --gray-darken: #424242;
-    --deep-orange-accent-3: #ff3d00;
-}
-
-html {
-    height: 100%;
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
+html,
 body {
-    position: relative;
-    margin: 0;
-    min-height: 120%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  min-height: 100%;
 }
 
-
-.waves-effect {
-    position: inherit !important;
+header img {
+  max-width: 90px;
 }
 
-.question_container {
+main a.btn {
+  background-color: #3498DB;
+}
+
+main a.btn:hover {
+  background-color: #169aff;
+}
+
+@media (max-width: 600px) {
+  main {
     min-height: 100%;
-    position: relative;
+  }
 }
 
-.block {
-    display: block;
+main.multiple-question [type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #169aff;
+  border-bottom: 2px solid #169aff;
 }
 
-.list-circle {
-    list-style-type: circle !important;
+main.announcement_container header img {
+  max-width: 120px;
 }
 
-.justify {
-    text-align: justify
+main.announcement_container section {
+  text-align: justify;
 }
 
-.bold {
-    font-weight: bold
+main.announcement_container ul.ml-4 li {
+  list-style-type: circle;
 }
 
-.underline {
-    text-decoration: underline
+main.announcement_container .flow_text {
+  -webkit-animation: flow 5s ease-in-out infinite;
+          animation: flow 5s ease-in-out infinite;
+  background: linear-gradient(-60deg, #00263b, #292E7C, #169aff, #3498DB);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.buttons_container {
-    position: sticky;
+@-webkit-keyframes flow {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
-
-.btn_border {
-    border: 1px solid var(--happy-blue) !important;
-    color: var(--happy-blue) !important;
-    background: transparent !important;
-}
-
-.f-20 {
-    font-size: 20px;
-}
-
-
-/* Navigation bar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 0 var(--light-gray);
-    border-radius: 0px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 10px;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--light-gray);
-}
-
-
-/* Header */
-
-header>.synoint_logo {
-    width: 100px;
-}
-
-header>.header_logo {
-    max-width: 70px;
-}
-
-section>h5.question_title {
-    margin-top: 90px;
-}
-
-
-/* Single question */
-
-div.select_fixed_50>div.select-wrapper {
-    width: 50%;
-}
-
-
-
-
-
-/* Text area */
-
-textarea.materialize-textarea:focus:not([readonly])+label {
-    color: var(--happy-blue) !important;
-}
-
-textarea.materialize-textarea:focus.invalid~label {
-    color: var(--alert) !important;
-}
-
-textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid var(--main-blue) !important;
-    -webkit-box-shadow: 0 1px 0 0 var(--main-blue) !important;
-    box-shadow: 0 1px 0 0 var(--main-blue) !important;
-}
-
-textarea.materialize-textarea:focus.invalid {
-    border-bottom: 1px solid var(--alert) !important;
-    -webkit-box-shadow: 0 1px 0 0 var(--alert) !important;
-    box-shadow: 0 1px 0 0 var(--alert) !important;
-}
-
-
-/* Radio */
-
-
-[type="radio"]:checked+span:after,
-[type="radio"].with-gap:checked+span:after {
-    background-color: var(--happy-blue) !important;
-}
-
-[type="radio"]:checked+span:after,
-[type="radio"].with-gap:checked+span:before,
-[type="radio"].with-gap:checked+span:after {
-    border: 2px solid var(--happy-blue) !important;
-}
-
-
-/* Matrix */
-
-tbody>tr {
-    border-bottom: 0px
-}
-
-
-tr>td.row-container {
-    width: 47%;
-    padding: 0px 70px 0px 0px;
-}
-
-td.group-container>label>span.matrix-col-label {
-    display: none;
-}
-
-
-label>i.fa-frown,
-i.fa-meh,
-i.fa-grin,
-i.fa-grin-beam,
-i.fa-meh-rolling-eyes {
-    font-size: 30px;
-    cursor: pointer;
-}
-
-[type="radio"]:checked+span:after,
-[type="radio"].with-gap:checked+span:after {
-    background-color: var(--happy-blue) !important;
-}
-
-[type="radio"]:checked+span:after,
-[type="radio"].with-gap:checked+span:before,
-[type="radio"].with-gap:checked+span:after {
-    border: 2px solid var(--happy-blue) !important;
-}
-
-[type="radio"]:checked~i.fa-frown {
-    color: var(--deep-orange-accent-3);
-}
-
-[type="radio"]:checked~i.fa-meh {
-    color: var(--yellow-accent-3);
-}
-
-[type="radio"]:checked~i.fa-grin {
-    color: var(--green-accent-3);
-}
-
-[type="radio"]:checked~i.fa-grin-beam {
-    color: var(--light-green-accent-3);
-}
-
-[type="radio"]:checked~i.fa-meh-rolling-eyes {
-    color: var(--gray-darken);
-}
-
-
-
-/* Final */
-
-.bg {
-    background-image: url(./assets/images/bg-pattern-light.png);
-    background-size: cover;
-    background-position: initial;
-    min-height: 100%;
-}
-
-.select-dropdown li.disabled,
-.select-dropdown li.disabled>span,
-.select-dropdown li.optgroup {
-    color: var(--dark-gray) !important;
-    background-color: transparent;
-}
-
-.select-wrapper input.select-dropdown {
-    border-bottom: 1px solid var(--dark-gray) !important;
-}
-
-[type="checkbox"]:checked+span:not(.lever):before {
-    border-right: 2px solid var(--happy-blue) !important;
-    border-bottom: 2px solid var(--happy-blue) !important;
-}
-
-.dropdown-content li>a,
-.dropdown-content li>span {
-    color: var(--dark-blue) !important;
-}
-
-/* Checkbox */
-
-[type="checkbox"]:checked+span:not(.lever):before {
-    border-right: 2px solid var(--happy-blue) !important;
-    border-bottom: 2px solid var(--happy-blue) !important;
-}
-
-
-.flow_text {
-    animation: flow 5s ease-in-out infinite;
-    background: linear-gradient(-60deg, var(--dark-blue), var(--deep-blue), var(--happy-blue), var(--main-blue));
-    background-size: 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-
-/*Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background: var(--dark-blue);
-}
-
-footer>div.logo_container {
-    position: absolute;
-}
-
-footer>div.logo_container>p {
-    font-size: 8px;
-    font-style: oblique;
-    color: var(--light-gray);
-    margin-bottom: 0px;
-    margin-left: 40px;
-}
-
-footer>div.logo_container>img {
-    width: 75px;
-    position: absolute;
-    left: 20px;
-    top: 14px;
-}
-
-
-/* Progress bar */
-footer>div.progress {
-    background-color: var(--light-gray) !important;
-    height: 5px;
-    width: 30% !important;
-    left: 35%;
-    top: 22px;
-    border-radius: 35px;
-}
-
-footer>div.progress>.determinate {
-    background-color: var(--happy-blue) !important;
-}
-
-section.container>video {
-    width: 100%;
-}
-
-
-
 
 @keyframes flow {
-    0% {
-        background-position: 0 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
 
-
-@media only screen and (max-width: 600px) {
-
-    /* Announcement */
-
-    .announcement_container>div.container>div.data_container>div.col_responsive {
-        width: 100%;
-        padding-right: 0px !important;
-        padding-left: 0px;
-    }
-
-    .announcement_container>div.container {
-        width: 80%;
-    }
-
-    .announcement_container>div.container>h2 {
-        font-size: 44px;
-    }
-
-
-    div.btn_container {
-        text-align: center;
-    }
-
-    /* Multiple question */
-    .inline {
-        display: inline-flex !important;
-    }
-
-    /* Matrix */
-
-    div.matrix-container>h5.header {
-        margin-bottom: 0px !important;
-        font-size: 19px
-    }
-
-    thead.header-container {
-        display: none;
-    }
-
-    tr.question-body {
-        display: grid;
-        margin-top: 20px;
-    }
-
-    tr>td.row-container {
-        width: 100%;
-        padding: 15px 3px;
-        background: white;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    td.group-container {
-        display: -webkit-inline-box;
-        padding: 15px 0px;
-        border: 3px solid white;
-    }
-
-    td.group-container>label>span.matrix-col-label {
-        display: inherit;
-        font-size: 15px;
-        color: whi
-    }
-
-
-    [type="radio"]:not(:checked)+span {
-        top: 7px;
-    }
-
-    /* Final */
-    .final_container>div.pt-5.px-5 {
-        padding: 0px !important;
-        margin: 0px !important;
-    }
-
-    .bg {
-        background-size: auto;
-        padding-bottom: 20px;
-    }
-
-    /* Footer */
-    footer>div.logo_container>p {
-        margin-left: 32px;
-    }
-
-    footer>div.logo_container>img {
-        width: 62px;
-        left: 14px;
-        top: 18px;
-    }
-
-
+@media (max-width: 600px) {
+  main.announcement_container header,
+  main.announcement_container div.btn_container {
+    text-align: center;
+  }
+  main.announcement_container section {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  main.announcement_container section div {
+    width: 100% !important;
+    padding: 10px !important;
+  }
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #00263b;
+}
+
+footer div p {
+  font-size: 8px;
+  font-style: oblique;
+  color: #f3f3f6;
+  margin-bottom: 0px;
+  margin-left: 40px;
+}
+
+footer div.logo_container {
+  position: absolute;
+}
+
+footer div.logo_container img {
+  width: 75px;
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  position: absolute;
+}
+
+footer div.progress {
+  background-color: #f3f3f6;
+  height: 5px;
+  width: 30% !important;
+  left: 35%;
+  top: 22px;
+  border-radius: 35px;
+}
+
+footer div.progress div.determinate {
+  background-color: #169aff;
+}
+/*# sourceMappingURL=app.css.map */

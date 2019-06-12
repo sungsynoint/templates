@@ -356,65 +356,14 @@
   <script>
     "use strict";
 
-    const returnValue = (groupName1, groupName2, groupName3, groupName4, groupName5) => {
-      const group1 = document.querySelectorAll(groupName1);
-      const group2 = document.querySelectorAll(groupName2);
-      const group3 = document.querySelectorAll(groupName3);
-      const group4 = document.querySelectorAll(groupName4);
-      const group5 = document.querySelectorAll(groupName5);
-      const next = document.querySelector("#next-question");
+    const next = document.querySelector("#next-question");
 
-      group1.forEach((group) => {
-        group.addEventListener("change", function (e) {
-          const checked1 = e.target.checked;
+    const group = document.querySelectorAll('input[name="group1"]:checked').length;
 
-          group2.forEach((group) => {
-            group.addEventListener("change", function (e) {
-              const checked2 = e.target.checked;
+    group ? next.removeAttribute("class", "disabled") +
+      next.setAttribute("class", "waves-effect waves-light btn blue accent-3") :
 
-              group3.forEach((group) => {
-                group.addEventListener("change", function (e) {
-                  const checked3 = e.target.checked;
-
-                  group4.forEach((group) => {
-                    group.addEventListener("change", function (e) {
-                      const checked4 = e.target.checked;
-                      group5.forEach((group) => {
-                        group.addEventListener("change", function (e) {
-                          const checked5 = e.target.checked;
-                          if (checked1 && checked2 && checked3 && checked4 &&
-                            checked5) {
-                            next.removeAttribute("class", "disabled") + next
-                              .setAttribute("class",
-                                "waves-effect waves-light btn-small blue accent-3"
-                              )
-                          } else {
-                            next.setAttribute("class",
-                              "waves-effect waves-light btn-small blue accent-3 disabled"
-                            )
-                          }
-
-                        });
-                      })
-                    });
-                  })
-                });
-              })
-            });
-          })
-
-        });
-      })
-    }
-
-
-    const isChecked1 = (result) => result;
-    const isChecked2 = (result) => result;
-    const isChecked3 = (result) => result;
-    const isChecked4 = (result) => result;
-    const isChecked5 = (result) => result;
-
-    returnValue('[name=group1]', '[name=group2]', '[name=group3]', '[name=group4]', '[name=group5]')
+      next.setAttribute("class", "disabled btn");
   </script>
 </body>
 
