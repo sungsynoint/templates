@@ -6,23 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Survey</title>
-  <link rel="stylesheet" href="../styles/index.css" />
-  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="../assets/css/app.css" />
+  <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
   <header class="nav-wrapper container mt-4 center">
-    <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+    <img class="header_logo" src="../assets/media/img/clients-img/materializecss.png" alt="Logo">
   </header>
-  <div>
-    <div class="container question_container">
-      <section class="container">
-        <h5 class="header my-5">
-          Which state do you currently live in?
-        </h5>
-        <form class="my-4" id="single-question">
+
+
+  <main class="container single-question">
+
+    <section class="container">
+      <h5 class="my-5 center">
+        Which state do you currently live in?
+      </h5>
+      <form class="row" id="single-question">
+        <div class="col s6">
           <p>
             <label>
               <input name="group1" type="radio" />
@@ -41,6 +44,9 @@
               <span>North West</span>
             </label>
           </p>
+
+        </div>
+        <div class="col s6">
           <p>
             <label>
               <input name="group1" type="radio" />
@@ -59,29 +65,32 @@
               <span>South West</span>
             </label>
           </p>
-        </form>
-        <div class="col s12 center pt-5">
-          <div class="mt-5 buttons_container">
-            <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">
-              Previous
-            </a>
-            <a class="waves-effect waves-light btn-small disabled" id="next-question" href="./free-question.html">
-              Next
-            </a>
-          </div>
         </div>
-      </section>
+      </form>
+    </section>
+
+    <section class="container center btn-container mt-5">
+      <a class="btn waves-effect waves-light btn-small blue accent-3" id="previous-question">
+        Previous
+      </a>
+      <a class="btn waves-effect waves-light btn-small disabled" id="next-question" href="./free-question.html">
+        Next
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="logo_container">
+      <p>Powered by</p>
+      <img src="../assets/media/img/SynoInt-white.png" alt="synoint">
     </div>
-    <footer>
-      <div class="logo_container">
-        <p>Powered by</p>
-        <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
-      </div>
-      <div class="progress ">
-        <div class="determinate" style="width: 10%"></div>
-      </div>
-    </footer>
-  </div>
+    <div class="progress ">
+      <div class="determinate" style="width: 10%"></div>
+    </div>
+  </footer>
+
+
   <script>
     const radio = document.querySelector("#single-question")
     const previous = document.querySelector("#previous-question");
@@ -91,8 +100,8 @@
       radio.addEventListener("change", (e) => {
         const checked = e.target.checked;
         if (checked) {
-          next.removeAttribute("class", "disabled")
-          next.setAttribute("class", "waves-effect waves-light btn-small blue accent-3")
+          next.removeAttribute("class", "btn disabled")
+          next.setAttribute("class", "btn waves-effect waves-light btn-small blue accent-3")
         }
       })
       previous.addEventListener("click", function () {

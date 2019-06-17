@@ -7,44 +7,50 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Survey</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="../styles/index.css" />
-  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="../assets/css/app.css" />
+  <link rel="stylesheet" href="../assets/css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
   <header class="nav-wrapper container mt-4 center">
-    <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+    <img class="header_logo" src="../assets/media/img/clients-img/materializecss.png" alt="Logo">
   </header>
-  <div class="container question_container">
-    <section class="container">
-      <h5 class="header my-5">
+
+
+  <main class="container free-question">
+
+    <section class="container center">
+      <h5 class="my-5">
         We are interested in your views about the materials that farmers use to feed their crops such as wheat, barley,
         sugar beet, potatoes, and so on.
       </h5>
-      <h5 class="header my-5">
+      <h5 class="my-5">
         If you were to refer to these materials, what would you call them?
       </h5>
 
-      <div class="input-field col s12">
+      <div class="container w-75">
         <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
       </div>
-      <div class="col s12 center footer_container">
-        <div class="mt-5 buttons_container">
-          <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">Previous</a>
-          <a class="disabled btn-small" id="next-question" href="./matrix-custom.html">
-            Next
-          </a>
-        </div>
-      </div>
+
     </section>
-  </div>
+
+    <section class="container center btn-container mt-4">
+      <a class="btn waves-effect waves-light btn-small blue accent-3" id="previous-question">
+        Previous
+      </a>
+      <a class="btn waves-effect waves-light btn-small disabled" id="next-question" href="./matrix-custom.html">
+        Next
+      </a>
+    </section>
+
+  </main>
 
   <footer>
     <div class="logo_container">
       <p>Powered by</p>
-      <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
+      <img src="../assets/media/img/SynoInt-white.png" alt="synoint">
     </div>
     <div class="progress ">
       <div class="determinate" style="width: 10%"></div>
@@ -67,9 +73,9 @@
 
         length > 1 ? next.removeAttribute("class",
             "disabled") + next.setAttribute("class",
-            "waves-effect waves-light btn-small blue accent-3") :
+            "btn waves-effect waves-light btn-small blue accent-3") :
           next.setAttribute("class",
-            "waves-effect waves-light btn-small blue accent-3 disabled")
+            "btn waves-effect waves-light btn-small blue accent-3 disabled")
       })
       previous.addEventListener("click", function () {
         window.history.back()

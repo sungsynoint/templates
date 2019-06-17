@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Survey</title>
-  <link rel="stylesheet" href="../styles/index.css" />
-  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="../assets/css/app.css" />
+  <link rel="stylesheet" href="../assets/css/index.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
@@ -15,61 +15,64 @@
 
 <body>
   <header class="nav-wrapper container mt-4 center">
-    <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
-
+    <img class="header_logo" src="../assets/media/img/clients-img/materializecss.png" alt="Logo">
   </header>
-  <div>
-    <div class="container question_container">
-      <section class="container">
-        <h5 class="header my-5">
-          Which country do you live in?
-        </h5>
-        <div class="input-field col s12 select_fixed_50">
 
-          <select id="select_question">
-            <option value="option" id="option"></option>
-            <option value="1">Australia</option>
-            <option value="2">Brazil</option>
-            <option value="3">Canada</option>
-            <option value="4">China</option>
-            <option value="5">Denmark</option>
-            <option value="6">Finland</option>
-            <option value="7">France</option>
-            <option value="8">Germany</option>
-            <option value="9">India</option>
-            <option value="10">Indonesia</option>
-            <option value="11">Italy</option>
-            <option value="12">Japan</option>
-            <option value="13">Mexico</option>
-            <option value="14">Norway</option>
-            <option value="15">Mexico</option>
-            <option value="16">Poland</option>
-            <option value="17">Russia</option>
-          </select>
-          <div class="col s12 center pt-5 ">
-            <div class="mt-5 buttons_container">
-              <a class="waves-effect waves-light btn-small blue accent-3" id="previous-question">
-                Previous
-              </a>
-              <a class="waves-effect waves-light btn-small blue accent-3 disabled" id="next-question"
-                href="./single-question.html">
-                Next
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+  <main class="container dropdown-question">
+    <section class="container center">
+      <h5 class="my-5">
+        Which country do you live in?
+      </h5>
+      <div class="container">
+
+        <select id="select_question">
+          <option value="option" id="option"></option>
+          <option value="1">Australia</option>
+          <option value="2">Brazil</option>
+          <option value="3">Canada</option>
+          <option value="4">China</option>
+          <option value="5">Denmark</option>
+          <option value="6">Finland</option>
+          <option value="7">France</option>
+          <option value="8">Germany</option>
+          <option value="9">India</option>
+          <option value="10">Indonesia</option>
+          <option value="11">Italy</option>
+          <option value="12">Japan</option>
+          <option value="13">Mexico</option>
+          <option value="14">Norway</option>
+          <option value="15">Mexico</option>
+          <option value="16">Poland</option>
+          <option value="17">Russia</option>
+        </select>
+
+      </div>
+    </section>
+
+    <section class="container center btn-container mt-5">
+      <a class="btn waves-effect waves-light btn-small blue accent-3" id="previous-question">
+        Previous
+      </a>
+      <a class="btn waves-effect waves-light btn-small blue accent-3 disabled" id="next-question"
+        href="./single-question.html">
+        Next
+      </a>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="logo_container">
+      <p>Powered by</p>
+      <img src="../assets/media/img/SynoInt-white.png" alt="synoint">
     </div>
-    <footer>
-      <div class="logo_container">
-        <p>Powered by</p>
-        <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
-      </div>
-      <div class="progress ">
-        <div class="determinate" id="progress"></div>
-      </div>
-    </footer>
-  </div>
+    <div class="progress">
+      <div class="determinate" id="progress"></div>
+    </div>
+  </footer>
+
+
   <script>
     "use strict";
     const element = document.querySelector("#select_question");
@@ -84,9 +87,9 @@
 
         const optionValue = value === "option";
         !optionValue ? next.removeAttribute("class", "disabled") + next.setAttribute("class",
-            "waves-effect waves-light btn-small blue accent-3") :
+            "btn waves-effect waves-light btn-small blue accent-3") :
           next.setAttribute("class",
-            "waves-effect waves-light btn-small blue accent-3 disabled")
+            "btn waves-effect waves-light btn-small blue accent-3 disabled")
       })
 
       previous.addEventListener("click", function () {

@@ -1,0 +1,385 @@
+$colors: (main-blue: #3498DB,
+    secondary-blue: #5fafec,
+    happy-blue: #169aff,
+    deep-blue: #292E7C,
+    dark-blue: #00263b,
+    dark-gray: #232323,
+    light-gray: #f3f3f6,
+    green-accent-3: #00e676,
+    light-green-accent-3: #76ff03,
+    yellow-accent-3: #ffea00,
+    gray-darken: #424242,
+    deep-orange-accent-3: #ff3d00,
+);
+
+
+$text-aligns:(justify: justify,
+    left: left,
+    right: right,
+    center: center);
+
+
+$mobile: 600px;
+$desktop: 1500px;
+
+
+
+@mixin mobile {
+    @media (max-width : #{$mobile}) {
+        @content;
+    }
+}
+
+
+@mixin desktop {
+    @media (min-width : #{$desktop}) {
+        @content;
+    }
+}
+
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+;
+
+@function textAlign($text-align) {
+    @return map-get($text-aligns, $text-align)
+}
+
+;
+
+
+
+html,
+body {
+    height: 105%;
+    min-height: 100%;
+    margin: 0;
+
+    .bg {
+        background-image: url(../media/img/bg-pattern-light.png);
+        background-size: cover;
+        background-position: initial;
+
+    }
+
+
+}
+
+header {
+    img {
+        max-width: 90px;
+    }
+}
+
+
+main {
+
+
+
+    section.btn-container {
+        position: sticky;
+
+        a.btn {
+            width: 130px;
+        }
+    }
+
+    @include mobile {
+        min-height: min(100%);
+
+        video {
+            width: 100%
+        }
+
+    }
+}
+
+
+
+main.announcement_container {
+
+    header img {
+        max-width: max(120px);
+    }
+
+    section {
+        text-align: textAlign(justify)
+    }
+
+    ul.ml-4 li {
+        list-style-type: circle;
+    }
+
+    @include mobile {
+
+        header,
+        div.btn_container {
+            text-align: textAlign(center);
+        }
+
+        section {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+
+            div {
+                width: 100% !important;
+                padding: 10px !important;
+            }
+        }
+
+    }
+}
+
+
+main.multiple-question {
+    form#multiple-question {
+        margin-left: 50px;
+
+        ul li {
+            display: block;
+            float: left;
+            width: 172px;
+            height: 45px;
+        }
+
+        @include mobile {
+            margin-left: 0px;
+
+            ul li {
+                width: 140px;
+            }
+        }
+
+        @include desktop {
+            margin-left: 135px;
+
+            ul li {
+                width: 150px;
+                height: 45px;
+            }
+        }
+    }
+}
+
+
+main.single-question {
+
+    form#single-question {
+
+        margin-left: 90px;
+
+        p {
+            display: inline-table;
+            float: left;
+            width: 210px;
+        }
+
+        @include mobile {
+            display: block;
+            margin-left: 0px;
+
+            p {
+                width: 0px;
+            }
+        }
+
+        @include desktop {
+            margin-left: 200px;
+        }
+
+    }
+
+}
+
+main.dropdown-question {
+
+    section {
+        width: 50%;
+    }
+
+    @include mobile {
+        section {
+            width: 95%;
+        }
+    }
+
+}
+
+main.free-question {
+    @include mobile {
+        h5 {
+            font-size: 20px;
+        }
+    }
+}
+
+
+main.matrix-question {
+
+    section {
+
+        tbody tr {
+            border-bottom: 0px
+        }
+
+        tr td.row-container {
+            width: 47%;
+            padding: 0px 70px 0px 0px;
+        }
+
+        td.group-container {
+            span.matrix-col-label {
+                display: none;
+            }
+        }
+
+    }
+
+
+    @include mobile {
+        padding-bottom: 100px;
+
+        [type="radio"]:not(:checked)+span {
+            top: 9px;
+        }
+
+
+        tr td.row-container {
+            width: 100% !important;
+            padding: 0 !important;
+            width: 100%;
+            padding: 15px 3px;
+            background: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        div.matrix-container h5 {
+            margin-bottom: 0px !important;
+            font-size: 19px
+        }
+
+        thead.header-container {
+            display: none;
+        }
+
+        tr.question-body {
+            display: grid;
+            margin-top: 20px;
+        }
+
+
+
+        td.group-container {
+            display: -webkit-inline-box;
+            padding: 15px 0px;
+            border: 3px solid white;
+        }
+
+        td.group-container {
+            label {
+                span.matrix-col-label {
+                    display: inherit;
+                    font-size: 15px;
+                    color: whi
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+main.satisfaction-question {
+    section {
+
+        tr {
+            border-bottom: 0;
+        }
+
+        label i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        [type="radio"]:checked~i.fa-frown {
+            color: color(deep-orange-accent-3);
+        }
+
+        [type="radio"]:checked~i.fa-meh {
+            color: color(yellow-accent-3);
+        }
+
+        [type="radio"]:checked~i.fa-grin {
+            color: color(green-accent-3);
+        }
+
+        [type="radio"]:checked~i.fa-grin-beam {
+            color: color(light-green-accent-3);
+        }
+
+        [type="radio"]:checked~i.fa-meh-rolling-eyes {
+            color: color(gray-darken);
+        }
+    }
+}
+
+
+
+
+main.final-container {
+    section {
+        margin-top: 100px;
+    }
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: color(dark-blue);
+
+    div p {
+        font-size: 8px;
+        font-style: oblique;
+        color: color(light-gray);
+        margin-bottom: 0px;
+        margin-left: 40px;
+    }
+
+    div.logo_container {
+        position: absolute;
+
+        img {
+            width: 75px;
+            position: absolute;
+            left: 20px;
+            top: 14px;
+            position: absolute;
+        }
+
+    }
+
+    div.progress {
+        background-color: color(light-gray);
+        height: 5px;
+        width: 30%;
+        left: 35%;
+        top: 22px;
+        border-radius: 35px;
+
+        div.determinate {
+            background-color: color(happy-blue)
+        }
+    }
+
+}

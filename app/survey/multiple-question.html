@@ -6,17 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Survey</title>
-    <link rel="stylesheet" href="../styles/index.css" />
-    <link rel="stylesheet" href="../styles/app.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
     <header class="nav-wrapper container mt-4 center">
-        <img class="header_logo" src="../styles/assets/clients-logos/materializecss.png" alt="Logo">
+        <img class="header_logo" src="../assets/media/img/clients-img/materializecss.png" alt="Logo">
     </header>
 
     <main class="multiple-question">
@@ -27,105 +25,115 @@
             <div class="container">
                 <div class="row">
                     <form id="multiple-question">
-                        <div class="col s6">
-                            <p>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" name="answer_one" />
                                     <span>Bebo</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" name="answer_two" />
                                     <span>Face</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>FitFinder </span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Foursquare</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Google+</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Instagram</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>LinkedIn</span>
                                 </label>
-                            </p>
-                        </div>
-                        <div class="col s6">
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>PlanetAll </span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Twitter</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Yahoo! Mash </span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>YouTube</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Snapchat</span>
                                 </label>
-                            </p>
-                            <p>
+                            </li>
+                        </ul>
+                        </ul>
+                        <ul class="col s12 m4 l4 my-0">
+                            <li>
                                 <label>
                                     <input type="checkbox" class="checkbox" />
                                     <span>Other</span>
                                 </label>
-                            </p>
-                        </div>
-                        <div class="col s12 center">
-                            <div class="mt-5">
-                                <a class="disabled btn" id="next-question" href="./dropdown.html">
-                                    Next
-                                </a>
-                            </div>
-
-                        </div>
+                            </li>
+                        </ul>
                     </form>
                 </div>
             </div>
         </section>
+
+        <section class="container center btn-container">
+            <a class="disabled btn" id="next-question" href="./dropdown.html">
+                Next
+            </a>
+        </section>
     </main>
+
     <footer>
         <div class="logo_container">
             <p>Powered by</p>
-            <img src="../styles/assets/images/SynoInt-white.png" alt="synoint">
+            <img src="../assets/media/img/SynoInt-white.png" alt="synoint">
         </div>
         <div class="progress">
             <div class="determinate" id="progress"></div>
