@@ -91,24 +91,8 @@
   </footer>
 
 
-  <script>
-    const radio = document.querySelector("#single-question")
-    const previous = document.querySelector("#previous-question");
-    const next = document.querySelector("#next-question");
+  <script src="../app.js">
 
-    const validateRadio = () => {
-      radio.addEventListener("change", (e) => {
-        const checked = e.target.checked;
-        if (checked) {
-          next.removeAttribute("class", "btn disabled")
-          next.setAttribute("class", "btn waves-effect waves-light btn-small blue accent-3")
-        }
-      })
-      previous.addEventListener("click", function () {
-        window.history.back()
-      });
-    }
-    validateRadio();
   </script>
 
 </body>

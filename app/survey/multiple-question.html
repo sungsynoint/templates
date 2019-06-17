@@ -140,27 +140,8 @@
         </div>
     </footer>
 
-    <script>
-        "use strict";
-        const elements = [];
-        const checkboxes = document.querySelectorAll('[type=checkbox]');
-        const next = document.querySelector("#next-question");
-        const progress = document.querySelector("#progress");
-        const values = checkboxes.values();
+    <script src="../app.js">
 
-        const validateCheckbox = () => {
-            for (const value of values) {
-                value.addEventListener("change", (e) => {
-                    value.checked ? elements.push(value) : elements.pop(value)
-                    elements.length >= 1 ? next.removeAttribute("class", "disabled") +
-                        next.setAttribute("class", "waves-effect waves-light btn blue accent-3") +
-                        progress.setAttribute("style", "width: 10%") :
-                        progress.setAttribute("style", "width: 0%") +
-                        next.setAttribute("class", "disabled btn");
-                });
-            }
-        }
-        validateCheckbox();
     </script>
 </body>
 
