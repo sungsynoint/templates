@@ -1,10 +1,10 @@
 class MutipleQuestion extends Validate {
-    constructor(checkbox) {
-        this.checkbox = checkbox
+    constructor(element) {
         super();
+        this.element = element;
     }
-    validateCheckbox(checkbox) {
-        for (const value of checkbox) {
+    validateCheckbox() {
+        for (const value of this.element) {
             value.addEventListener("change", () => {
                 value.checked ? this.items.push(value) : this.items.pop(value)
                 this.enableButton(this.items.length >= 1)
@@ -13,6 +13,6 @@ class MutipleQuestion extends Validate {
     }
 }
 
-const checkbox = document.querySelectorAll('[type=checkbox]');
-const validate = new MutipleQuestion(checkbox)
+const element = document.querySelectorAll('[type=checkbox]');
+const validate = new MutipleQuestion(element)
 validate.validateCheckbox();

@@ -10,6 +10,7 @@ class Validate {
         const enable = "btn waves-effect waves-light btn-small";
 
         if (condition) {
+
             this.nextBtn.removeAttribute("class", disable);
             this.nextBtn.setAttribute("class", enable)
         } else {

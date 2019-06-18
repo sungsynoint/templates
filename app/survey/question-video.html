@@ -55,18 +55,8 @@
 
     </footer>
 
-    <script>
-        "use strict";
-        const next = document.querySelector("#next-question");
-        const video = document.querySelector("#video");
-        video.addEventListener('click', function (e) {
-            setTimeout(() => {
-                next.removeAttribute("class", "disabled")
-                next.setAttribute("class",
-                    "btn waves-effect waves-light btn-small blue accent-3")
-            }, 3000)
-        })
-    </script>
+    <script src="../js/app.js"> </script>
+    <script src="../js/video.js"> </script>
 </body>
 
 </html>

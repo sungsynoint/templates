@@ -88,28 +88,8 @@
   </footer>
 
 
-  <script>
-    const nodeList = document.querySelectorAll('[name="group1"]')
-    const next = document.querySelector("#next-question");
-
-    const validateSatisfaction = () => {
-      nodeList.forEach((list) => {
-        list.addEventListener("change", (e) => {
-          const result = e.target.checked;
-          result ? next.removeAttribute("class", "disabled") + next.setAttribute("class",
-              "btn waves-effect waves-light btn-small blue accent-3") :
-            next.setAttribute("class",
-              "btn waves-effect waves-light btn-small blue accent-3 disabled")
-        })
-      })
-
-      $(document).ready(function () {
-        $(".tooltipped").tooltip();
-      });
-    }
-
-    validateSatisfaction()
-  </script>
+  <script src="../js/app.js"> </script>
+  <script src="../js/satisfaction.js"> </script>
 </body>
 
 </html>
