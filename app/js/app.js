@@ -6,16 +6,8 @@ class Validate {
     }
 
     enableButton(condition) {
-        const disable = "disabled btn";
-        const enable = "btn waves-effect waves-light btn-small";
-
-        if (condition) {
-
-            this.nextBtn.removeAttribute("class", disable);
-            this.nextBtn.setAttribute("class", enable)
-        } else {
-            this.nextBtn.setAttribute("class", disable)
-        }
+        let btnClass = "btn waves-effect waves-light btn-small"
+        condition ? this.nextBtn.setAttribute("class", btnClass) : this.nextBtn.setAttribute("class", btnClass += " disabled")
     }
 
 }
