@@ -20,12 +20,19 @@ $text-aligns:(justify: justify,
 
 
 $mobile: 600px;
-$desktop: 1500px;
+$laptop: 1500px;
+$desktop: 1700px;
 
 
 
 @mixin mobile {
     @media (max-width : #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width : #{$laptop}) {
         @content;
     }
 }
@@ -169,7 +176,7 @@ main.single-question {
 
     form#single-question {
 
-        margin-left: 90px;
+        margin-left: 135px;
 
         p {
             display: inline-table;
@@ -186,8 +193,9 @@ main.single-question {
             }
         }
 
+
         @include desktop {
-            margin-left: 200px;
+            margin-left: 205px;
         }
 
     }

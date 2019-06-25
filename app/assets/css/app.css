@@ -83,7 +83,7 @@ main.multiple-question form#multiple-question ul li {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1700px) {
   main.multiple-question form#multiple-question {
     margin-left: 135px;
   }
@@ -94,7 +94,7 @@ main.multiple-question form#multiple-question ul li {
 }
 
 main.single-question form#single-question {
-  margin-left: 90px;
+  margin-left: 135px;
 }
 
 main.single-question form#single-question p {
@@ -113,9 +113,9 @@ main.single-question form#single-question p {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1700px) {
   main.single-question form#single-question {
-    margin-left: 200px;
+    margin-left: 205px;
   }
 }
 
