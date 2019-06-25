@@ -77,8 +77,6 @@ header {
 
 main {
 
-
-
     section.btn-container {
         position: sticky;
 
@@ -150,7 +148,8 @@ main.multiple-question {
             margin-left: 0px;
 
             ul li {
-                width: 140px;
+                width: 124px;
+                margin-left: 16px;
             }
         }
 
@@ -247,50 +246,50 @@ main.matrix-question {
             top: 9px;
         }
 
-
-        tr td.row-container {
-            width: 100% !important;
-            padding: 0 !important;
-            width: 100%;
-            padding: 15px 3px;
-            background: white;
-            font-size: 18px;
-            font-weight: bold;
+        thead.header-container {
+            display: none;
         }
-
 
         div.matrix-container h5 {
             margin-bottom: 0px !important;
             font-size: 19px
         }
 
-        thead.header-container {
-            display: none;
-        }
-
-        tr.question-body {
-            display: grid;
-            margin-top: 20px;
-        }
-
-
 
         td.group-container {
             display: -webkit-inline-box;
             padding: 15px 0px;
-            border: 3px solid white;
-        }
+            border: 3px solid #fff;
 
-        td.group-container {
             label {
                 span.matrix-col-label {
                     display: inherit;
                     font-size: 15px;
-                    color: whi
                 }
             }
         }
 
+        tr.question-body {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            display: grid;
+        }
+
+
+        tr td.row-container {
+            width: 100% !important;
+            padding: 0 !important;
+            width: 100%;
+            padding: 15px 3px;
+            background: #fff;
+            font-size: 18px;
+            font-weight: bold;
+
+            span {
+                display: block;
+                margin-bottom: 13px;
+            }
+        }
 
     }
 
@@ -333,10 +332,15 @@ main.satisfaction-question {
 
 
 
-
 main.final-container {
     section {
         margin-top: 100px;
+
+        @include mobile {
+            h2 {
+                font-size: 30px;
+            }
+        }
     }
 }
 

@@ -5,7 +5,7 @@ class Video extends Validate {
     }
 
     validateVideo() {
-        this.select.addEventListener("click", (e) => {
+        this.select.addEventListener("play", (e) => {
             setTimeout(() => {
                 this.enableButton(true)
             }, 2000)
