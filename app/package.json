@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src/app.js -o ./public/scripts/bundle.js --presets env --watch",
+    "build multiple": "babel ./src/multiple-question.js -o ./public/scripts/multiple_bundle.js --presets env --watch",
+    "build dropdown": "babel ./src/dropdown.js -o ./public/scripts/dropdown_bundle.js --presets env --watch",
+    "build single": "babel ./src/single-question.js -o ./public/scripts/single_bundle.js --presets env --watch",
+    "build free": "babel ./src/free-question.js -o ./public/scripts/free_bundle.js --presets env --watch",
+    "build matrix": "babel ./src/matrix.custom.js -o ./public/scripts/matrix_bundle.js --presets env --watch",
+    "build satisfaction": "babel ./src/satisfaction.js -o ./public/scripts/satisfaction_bundle.js --presets env --watch",
+    "build video": "babel ./src/video.js -o ./public/scripts/video_bundle.js --presets env --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  }
+}

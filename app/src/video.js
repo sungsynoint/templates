@@ -13,6 +13,7 @@ class Video extends Validate {
     }
 }
 
+
 const selectId = document.querySelector("#video");
 const select = new Video(selectId);
 
